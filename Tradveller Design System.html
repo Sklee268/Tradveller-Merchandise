@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tradveller — Design System</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<link rel="stylesheet" href="tradveller-merch.css" />
+<link rel="stylesheet" href="brand-guide.css" />
+</head>
+<body class="guide" data-screen-label="Design System">
+
+<!-- ============================================================
+     COVER
+============================================================ -->
+<section class="cover" data-screen-label="Cover">
+  <div class="watermark">
+    <img src="assets/logo-icon-purple.png" alt="" aria-hidden="true" style="width:100%;height:auto;" />
+  </div>
+
+  <div class="top">
+    <img src="assets/logo-hori-purple.png" alt="Tradveller" />
+    <div class="meta">
+      <span>Vol. <b>01</b></span>
+      <span>Issued <b>May 2026</b></span>
+      <span>Doc <b>TVLR-DS-01</b></span>
+    </div>
+  </div>
+
+  <div class="mid">
+    <span class="eyebrow">Brand &amp; Visual System · v1</span>
+    <h1>Design&nbsp;System</h1>
+    <div class="strap">
+      <p>Marks, colour, type, components, product, templates, voice. The single source of truth for the Tradveller line — designed for movement, inspired by mindset.</p>
+      <div class="stats">
+        <div class="cell"><span class="k">Hero hue</span><span class="v">#6147FD</span></div>
+        <div class="cell"><span class="k">Sections</span><span class="v">8</span></div>
+        <div class="cell"><span class="k">Type</span><span class="v">Sora · Orbitron</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bot">
+    <span>For internal use · Tradveller Brand Ops</span>
+    <span>Next review · <b>Q4 2026</b></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     TOC
+============================================================ -->
+<nav class="toc">
+  <a href="#identity"><span class="num">§ 01</span><span class="t">Identity &amp; Story</span></a>
+  <a href="#logo"><span class="num">§ 02</span><span class="t">Logo System</span></a>
+  <a href="#color"><span class="num">§ 03</span><span class="t">Color</span></a>
+  <a href="#type"><span class="num">§ 04</span><span class="t">Typography</span></a>
+  <a href="#components"><span class="num">§ 05</span><span class="t">UI Components</span></a>
+  <a href="#products"><span class="num">§ 06</span><span class="t">Product System</span></a>
+  <a href="#templates"><span class="num">§ 07</span><span class="t">Page Templates</span></a>
+  <a href="#voice"><span class="num">§ 08</span><span class="t">Voice &amp; Slogans</span></a>
+</nav>
+
+<!-- ============================================================
+     AT A GLANCE — system summary card
+============================================================ -->
+<section class="docpage" style="padding: 80px 0 40px;" data-screen-label="At a glance">
+  <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap: 24px;">
+    <!-- LEFT: system tiles -->
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-content: stretch;">
+      <!-- Mark tile -->
+      <div style="background:#000; border-radius: var(--merch-radius-lg); padding: 24px; display:flex; flex-direction:column; justify-content:space-between; min-height: 220px;">
+        <span style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color: rgba(255,255,255,.5);">The mark</span>
+        <div style="display:flex; align-items:flex-end; justify-content:center; flex:1; padding: 8px 0;">
+          <img src="assets/logo-icon-purple.png" alt="" style="height: 88px; width:auto;" />
+        </div>
+        <span style="font-size: 11px; color: rgba(255,255,255,.5); font-family: 'JetBrains Mono', monospace; letter-spacing: .04em;">The Bull</span>
+      </div>
+
+      <!-- Color triad tile -->
+      <div style="background:#fff; border:1px solid var(--merch-line); border-radius: var(--merch-radius-lg); padding: 24px; display:flex; flex-direction:column; justify-content:space-between; min-height: 220px;">
+        <span style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color: var(--merch-mute);">Three notes</span>
+        <div style="display:flex; gap:6px; flex:1; align-items:stretch; margin: 12px 0;">
+          <div style="flex:1; background:#0A0A0F; border-radius: 6px;"></div>
+          <div style="flex:1; background:#fff; border:1px solid var(--merch-line); border-radius: 6px;"></div>
+          <div style="flex:1; background:#6147FD; border-radius: 6px;"></div>
+        </div>
+        <span style="font-size: 11px; color: var(--merch-mute); font-family: 'JetBrains Mono', monospace; letter-spacing: .04em;">Ink · Paper · #6147FD</span>
+      </div>
+
+      <!-- Type tile -->
+      <div style="background: var(--merch-surface); border:1px solid var(--merch-line); border-radius: var(--merch-radius-lg); padding: 24px; display:flex; flex-direction:column; justify-content:space-between; min-height: 220px;">
+        <span style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color: var(--merch-mute);">Type pair</span>
+        <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap: 8px;">
+          <span style="font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: .04em; color: var(--merch-ink); line-height: 1;">TVLR</span>
+          <span style="font-family: 'Sora', sans-serif; font-weight: 500; font-size: 18px; color: var(--merch-ink); letter-spacing: -0.01em;">Tradveller.</span>
+        </div>
+        <span style="font-size: 11px; color: var(--merch-mute); font-family: 'JetBrains Mono', monospace; letter-spacing: .04em;">Orbitron · Sora</span>
+      </div>
+
+      <!-- Voice tile -->
+      <div style="background:#6147FD; color:#fff; border-radius: var(--merch-radius-lg); padding: 24px; display:flex; flex-direction:column; justify-content:space-between; min-height: 220px;">
+        <span style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color: rgba(255,255,255,.7);">Tagline</span>
+        <div style="flex:1; display:flex; align-items:center;">
+          <span style="font-family: 'Sora', sans-serif; font-weight: 300; font-style: italic; font-size: 18px; line-height: 1.3; color: #fff;">We Trade &amp; We Travel — with Style.</span>
+        </div>
+        <span style="font-size: 11px; color: rgba(255,255,255,.7); font-family: 'JetBrains Mono', monospace; letter-spacing: .04em;">Master voice line</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: open-the-shop CTA -->
+    <a href="Landing Page.html" style="background:#000; color:#fff; border-radius: var(--merch-radius-lg); padding: 36px; display:flex; flex-direction:column; justify-content:space-between; text-decoration:none; min-height: 220px; position:relative; overflow:hidden; isolation:isolate;">
+      <div style="position:absolute; inset:0; background: radial-gradient(60% 70% at 80% 20%, rgba(97,71,253,.35), transparent 60%); z-index:0;"></div>
+      <div style="position:relative; z-index:1;">
+        <span style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color: var(--merch-accent);">System in use</span>
+        <h3 style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 32px; letter-spacing: -0.015em; margin-top: 14px; line-height: 1.05;">See it on the shop floor.</h3>
+      </div>
+      <div style="position:relative; z-index:1; display:flex; align-items:center; gap: 10px; font-size: 13px; letter-spacing: 0.06em; color: rgba(255,255,255,.8); margin-top: 24px;">
+        Open the landing page
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     01 · IDENTITY
+============================================================ -->
+<section class="docsection no-border docpage" id="identity" data-screen-label="01 Identity">
+  <header class="shead">
+    <div class="num">§ 01 / Identity</div>
+    <h2>Identity &amp; Story
+      <small>Tradveller is the uniform of the new generation — built for people who pursue freedom with purpose. This is the brand’s reason to exist, in our own words.</small>
+    </h2>
+  </header>
+
+  <div class="identity">
+    <div class="essay">
+      <p class="lead">Designed for movement. Inspired by mindset.</p>
+      <p>At Tradveller, we believe life is a journey between two worlds — the one you build and the one you explore.</p>
+      <p>Born from the spirit of <strong>trade and travel</strong>, our brand represents those who pursue freedom with purpose — the thinkers, the doers, the creators who trade not just assets, but ideas, time, and energy to design a life without borders.</p>
+      <p>Our clothing is made for modern mobility: minimalist, functional, and timeless. Each piece blends performance and simplicity — adaptable enough for a long flight, a spontaneous trip, or a quiet morning of focus.</p>
+      <p><strong>We value less, but better.</strong> Every material, every seam, every detail serves a reason — to keep you comfortable, confident, and ready to move.</p>
+      <p>Tradveller is not about luxury; it’s about freedom — the freedom to work anywhere, live everywhere, and stay grounded while chasing the world ahead.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="n">/ 01 · Voice</span>
+        <h4>Quiet, considered, never loud.</h4>
+        <p>Speak like a designer, not a marketer. Sentence case, short lines, no exclamation marks. The brand persuades by being right, not by shouting.</p>
+      </div>
+      <div class="pillar">
+        <span class="n">/ 02 · Aesthetic</span>
+        <h4>Black, white, one purple.</h4>
+        <p>The shop is essentially monochrome. Brand purple appears only as the bull mark and a single accent state — never as decoration, never as a fill of large areas.</p>
+      </div>
+      <div class="pillar">
+        <span class="n">/ 03 · Product</span>
+        <h4>Less, but better.</h4>
+        <p>Four categories. Five-piece collections. Tight curation. Every piece earns its place — if it doesn’t move with you, it doesn’t ship.</p>
+      </div>
+      <div class="pillar">
+        <span class="n">/ 04 · Audience</span>
+        <h4>Thinkers in transit.</h4>
+        <p>People who trade ideas, time, and energy. Remote-first, design-literate, allergic to logomania. We make pieces that belong on a long flight and a quiet morning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     02 · LOGO
+============================================================ -->
+<section class="docsection docpage" id="logo" data-screen-label="02 Logo">
+  <header class="shead">
+    <div class="num">§ 02 / Logo</div>
+    <h2>Logo system
+      <small>One bull, one wordmark, and the lockups that pair them. The full official set ships in four forms × three colourways &mdash; everything you need for any surface.</small>
+    </h2>
+  </header>
+
+  <!-- Primary lockups -->
+  <div class="logos">
+    <div class="logo-card">
+      <div class="logo-stage">
+        <img src="assets/logo-hori-purple.png" alt="Tradveller horizontal lockup" />
+      </div>
+      <div class="logo-info">
+        <span class="role">Primary · Horizontal</span>
+        <h4>Bull + wordmark, side-by-side</h4>
+        <p>Default for the site header, footer, hangtags, business communications, and any surface wider than 80&nbsp;mm.</p>
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-stage">
+        <img src="assets/logo-vert-purple.png" alt="Tradveller vertical lockup" style="max-height:80%;" />
+      </div>
+      <div class="logo-info">
+        <span class="role">Vertical</span>
+        <h4>Stacked, hero use</h4>
+        <p>For centred placements that need air around them &mdash; full chest, full back, posters, hangtag covers, vertical banners.</p>
+      </div>
+    </div>
+
+    <div class="logo-card">
+      <div class="logo-stage">
+        <img src="assets/logo-icon-purple.png" alt="Tradveller bull icon" style="max-height:65%;" />
+      </div>
+      <div class="logo-info">
+        <span class="role">Icon · Solo</span>
+        <h4>The bull, alone</h4>
+        <p>For caps, embroidery, app icons, sticker drops, favicons, and any tight footprint. The hero of the brand.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Variant matrix -->
+  <h4 style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--merch-mute);margin:64px 0 16px;">Colour variants · all official files</h4>
+  <div class="logo-matrix">
+    <!-- header row -->
+    <div class="row hd">
+      <div>Form / File</div>
+      <div>Purple <span style="text-transform:none;letter-spacing:0;color:var(--merch-ink);">· #6147FD</span></div>
+      <div>Black <span style="text-transform:none;letter-spacing:0;color:var(--merch-ink);">· on light</span></div>
+      <div>White <span style="text-transform:none;letter-spacing:0;color:var(--merch-ink);">· on dark</span></div>
+    </div>
+
+    <!-- Horizontal lockup -->
+    <div class="row hori">
+      <div class="lab">
+        <span class="form">Full · Horizontal</span>
+        <span class="file">TVLR_Logo_Full_Hori_*</span>
+      </div>
+      <div class="cell-purple"><img src="assets/logo-hori-purple.png" alt="" /></div>
+      <div class="cell-black"><img src="assets/logo-hori-black.png" alt="" /></div>
+      <div class="cell-white"><img src="assets/logo-hori-purple.png" alt="" style="filter:brightness(0) invert(1);" /></div>
+    </div>
+
+    <!-- Vertical lockup -->
+    <div class="row vert">
+      <div class="lab">
+        <span class="form">Full · Vertical</span>
+        <span class="file">TVLR_Logo_Full_Vert_*</span>
+      </div>
+      <div class="cell-purple"><img src="assets/logo-vert-purple.png" alt="" /></div>
+      <div class="cell-black"><img src="assets/logo-vert-purple.png" alt="" style="filter:brightness(0);" /></div>
+      <div class="cell-white"><img src="assets/logo-vert-white.png" alt="" /></div>
+    </div>
+
+    <!-- Icon -->
+    <div class="row icon">
+      <div class="lab">
+        <span class="form">Icon · Bull</span>
+        <span class="file">TVLR_Logo_Icon_*</span>
+      </div>
+      <div class="cell-purple"><img src="assets/logo-icon-purple.png" alt="" /></div>
+      <div class="cell-black"><img src="assets/logo-icon-black.png" alt="" /></div>
+      <div class="cell-white"><img src="assets/logo-icon-white.png" alt="" /></div>
+    </div>
+
+    <!-- Type only -->
+    <div class="row type">
+      <div class="lab">
+        <span class="form">Type · Wordmark only</span>
+        <span class="file">TVLR_Logo_Type_*</span>
+      </div>
+      <div class="cell-purple"><img src="assets/logo-type-purple.png" alt="" /></div>
+      <div class="cell-black"><img src="assets/logo-type-black.png" alt="" /></div>
+      <div class="cell-white"><img src="assets/logo-type-white.png" alt="" /></div>
+    </div>
+  </div>
+
+  <!-- Clear-space & reversed pair -->
+  <div class="logos" style="margin-top: 24px; grid-template-columns: 1fr 1fr;">
+    <div class="logo-card">
+      <div class="logo-stage dark">
+        <img src="assets/logo-hori-purple.png" alt="Tradveller on black" style="filter:brightness(0) invert(1);"/>
+      </div>
+      <div class="logo-info">
+        <span class="role">Reversed · On dark</span>
+        <h4>White-out on black</h4>
+        <p>For the site header, footer, dark hero overlays, and the promo bar. Both the bull and wordmark drop to pure white &mdash; never tinted purple over dark substrates.</p>
+      </div>
+    </div>
+    <div class="logo-card">
+      <div class="logo-stage">
+        <svg viewBox="0 0 360 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="40" y="40" width="280" height="100" rx="3" fill="none" stroke="#6147FD" stroke-width="1" stroke-dasharray="4 4"/>
+          <g transform="translate(70 70)">
+            <g fill="#6147FD">
+              <path d="M0 4 L-4 8 L-4 20 L4 16 L8 26 L14 28 L14 56 L18 58 L22 58 L26 56 L26 28 L32 26 L36 16 L44 20 L44 8 L40 4 L32 8 L30 16 L26 18 L26 10 L20 10 L20 18 L14 16 L12 8 Z" transform="scale(0.55)"/>
+            </g>
+            <text x="40" y="36" fill="#0A0A0F" font-family="Orbitron, sans-serif" font-weight="800" font-size="24" letter-spacing="2">TRADVELLER</text>
+          </g>
+          <text x="44" y="56" font-family="JetBrains Mono, monospace" font-size="10" fill="#6147FD">X</text>
+          <text x="312" y="136" font-family="JetBrains Mono, monospace" font-size="10" fill="#6147FD">X</text>
+        </svg>
+      </div>
+      <div class="logo-info">
+        <span class="role">Clear space</span>
+        <h4>X = horn height of the bull</h4>
+        <p>Maintain at least one X of empty space on every side of the wordmark, and 0.75&thinsp;X around the solo bull. Type, seams, edges, and other graphics all count as encroachment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Apparel graphic mark (downplayed, separate from corporate logo) -->
+  <div class="tvrl-wide">
+    <div class="stage">
+      <div class="tvrl-mark">TVRL<span class="dot">.</span></div>
+    </div>
+    <div class="info">
+      <span class="role">Apparel print only · not a logo</span>
+      <h4>TVRL.</h4>
+      <p>The four-letter abbreviation is reserved for garment prints &mdash; graphic tees, bandana motifs, and full-back artwork. It is <b style="color:#fff;">never</b> used as a logo, in marketing, on packaging, or in place of the wordmark. Set in Orbitron 800, period in brand purple.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 · COLOR
+============================================================ -->
+<section class="docsection docpage" id="color" data-screen-label="03 Color">
+  <header class="shead">
+    <div class="num">§ 03 / Color</div>
+    <h2>Color
+      <small>The shop reads in three notes: ink black, paper white, brand purple. Everything else is a tonal step between them, or a state — never a brand colour.</small>
+    </h2>
+  </header>
+
+  <!-- Brand triad -->
+  <div class="swatches" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 24px;">
+    <div class="swatch">
+      <div class="chip dark" style="background:#0A0A0F;"><span class="name">Ink</span></div>
+      <div class="meta">
+        <span class="hex">#0A0A0F</span>
+        <span class="role">Body text · Header · Footer</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:#FFFFFF; border-bottom:1px solid var(--merch-line);"><span class="name">Paper</span></div>
+      <div class="meta">
+        <span class="hex">#FFFFFF</span>
+        <span class="role">Default surface · Product card</span>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip dark" style="background:#6147FD;"><span class="name">Tradveller Purple</span></div>
+      <div class="meta">
+        <span class="hex">#6147FD</span>
+        <span class="role">Bull mark · Single accent</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neutrals -->
+  <h4 style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--merch-mute);margin:32px 0 16px;">Neutrals · tonal scale</h4>
+  <div class="swatches">
+    <div class="swatch"><div class="chip dark" style="background:#08070F;"><span class="name">Void</span></div><div class="meta"><span class="hex">#08070F</span><span class="role">Promo · Header BG</span></div></div>
+    <div class="swatch"><div class="chip dark" style="background:#2C2C36;"><span class="name">Smoke</span></div><div class="meta"><span class="hex">#2C2C36</span><span class="role">Secondary text</span></div></div>
+    <div class="swatch"><div class="chip dark" style="background:#6B6B78;"><span class="name">Mist</span></div><div class="meta"><span class="hex">#6B6B78</span><span class="role">Mute · Captions</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#A8A8B4;"><span class="name">Cloud</span></div><div class="meta"><span class="hex">#A8A8B4</span><span class="role">Disabled · Hints</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#E8E8EE;"><span class="name">Line</span></div><div class="meta"><span class="hex">#E8E8EE</span><span class="role">Borders · Dividers</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F7F7FA;"><span class="name">Surface</span></div><div class="meta"><span class="hex">#F7F7FA</span><span class="role">Card BG · Hover</span></div></div>
+  </div>
+
+  <!-- States -->
+  <h4 style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--merch-mute);margin:48px 0 16px;">States · functional only</h4>
+  <div class="swatches" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="swatch"><div class="chip dark" style="background:#FACC15;color:#000;"><span class="name">Promo</span></div><div class="meta"><span class="hex">#FACC15</span><span class="role">PROMO chip only</span></div></div>
+    <div class="swatch"><div class="chip dark" style="background:#C43E2E;"><span class="name">Stock</span></div><div class="meta"><span class="hex">#C43E2E</span><span class="role">Low-stock warnings</span></div></div>
+    <div class="swatch"><div class="chip dark" style="background:#2A5D23;"><span class="name">In stock</span></div><div class="meta"><span class="hex">#2A5D23</span><span class="role">Availability ticks</span></div></div>
+    <div class="swatch"><div class="chip dark" style="background:#3D24E0;"><span class="name">Press</span></div><div class="meta"><span class="hex">#3D24E0</span><span class="role">Purple press state</span></div></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     04 · TYPOGRAPHY
+============================================================ -->
+<section class="docsection docpage" id="type" data-screen-label="04 Type">
+  <header class="shead">
+    <div class="num">§ 04 / Type</div>
+    <h2>Typography
+      <small>Two families. Sora carries the entire shop &mdash; product, body, UI. Orbitron handles the wordmark and the loud moments. JetBrains Mono for receipts and order codes.</small>
+    </h2>
+  </header>
+
+  <div class="type-stack">
+    <div class="type-row">
+      <span class="label"><b>Display</b><br/>Orbitron 800</span>
+      <span class="sample" style="font-family:'Orbitron',sans-serif;font-weight:800;font-size:72px;letter-spacing:0.04em;text-transform:uppercase;line-height:0.95;">TRADVELLER</span>
+      <span class="specs">
+        <b>72 / 1.0 / 4%</b>
+        Hero · Slogans · Tags
+      </span>
+    </div>
+    <div class="type-row">
+      <span class="label"><b>Section</b><br/>Sora 600</span>
+      <span class="sample" style="font-family:'Sora',sans-serif;font-weight:600;font-size:48px;letter-spacing:-0.015em;">Our Products</span>
+      <span class="specs">
+        <b>48 / 1.1 / -1.5%</b>
+        Section titles
+      </span>
+    </div>
+    <div class="type-row">
+      <span class="label"><b>Product</b><br/>Sora 600</span>
+      <span class="sample" style="font-family:'Sora',sans-serif;font-weight:600;font-size:28px;letter-spacing:-0.01em;">Tradveller Graphic Oversize T</span>
+      <span class="specs">
+        <b>28 / 1.25 / -1%</b>
+        Product titles
+      </span>
+    </div>
+    <div class="type-row">
+      <span class="label"><b>Body</b><br/>Sora 400</span>
+      <span class="sample" style="font-family:'Sora',sans-serif;font-weight:400;font-size:17px;line-height:1.55;color:var(--merch-ink-2);max-width:50ch;">Trade with purpose. Travel with meaning. Live with balance. This is the uniform of the new generation — the ones redefining success beyond borders.</span>
+      <span class="specs">
+        <b>17 / 1.55 / 0</b>
+        Paragraph copy
+      </span>
+    </div>
+    <div class="type-row">
+      <span class="label"><b>Eyebrow</b><br/>Sora 500</span>
+      <span class="sample" style="font-family:'Sora',sans-serif;font-weight:500;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--merch-mute);">Must Have · Curated Drops</span>
+      <span class="specs">
+        <b>13 / 1.0 / 22%</b>
+        Labels · Nav · Eyebrows
+      </span>
+    </div>
+    <div class="type-row">
+      <span class="label"><b>Price</b><br/>Sora 600</span>
+      <span class="sample" style="font-family:'Sora',sans-serif;font-weight:600;font-size:22px;letter-spacing:0;">RM&nbsp;120</span>
+      <span class="specs">
+        <b>22 / 1.0 / 0</b>
+        Always RM, hard space
+      </span>
+    </div>
+    <div class="type-row">
+      <span class="label"><b>Mono</b><br/>JetBrains Mono</span>
+      <span class="sample" style="font-family:'JetBrains Mono',monospace;font-weight:400;font-size:14px;color:var(--merch-mute);">SKU TVLR-T-01 · 2026/05 · M / Void Black</span>
+      <span class="specs">
+        <b>14 / 1.5 / 4%</b>
+        Order codes · Receipts
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     05 · UI COMPONENTS
+============================================================ -->
+<section class="docsection docpage" id="components" data-screen-label="05 Components">
+  <header class="shead">
+    <div class="num">§ 05 / UI</div>
+    <h2>UI components
+      <small>The kit that builds the shop. Each component is shown at default state — hover, press, and disabled states follow the colour map in §&nbsp;03.</small>
+    </h2>
+  </header>
+
+  <div class="components">
+    <!-- Buttons -->
+    <div class="comp c-span-6">
+      <div class="stage">
+        <button class="btn btn-primary">Check out
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </button>
+        <button class="btn btn-ghost">Add to cart</button>
+        <button class="btn btn-light btn-square" style="border-color:var(--merch-line);">Continue shopping</button>
+      </div>
+      <div class="label-bar"><span><b>Buttons</b> · Pill, ghost, square</span><span>btn-primary · btn-ghost · btn-square</span></div>
+    </div>
+
+    <!-- Shop pill -->
+    <div class="comp c-span-3 dark">
+      <div class="stage" style="background:linear-gradient(160deg,#1f2a3d 0%,#0e1626 100%);">
+        <a class="btn btn-light" href="#">Shop now
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </a>
+      </div>
+      <div class="label-bar"><span><b>Shop pill</b> · On dark banner</span><span>btn-light</span></div>
+    </div>
+
+    <!-- Block CTA -->
+    <div class="comp c-span-3">
+      <div class="stage">
+        <button class="btn btn-primary btn-block" style="border-radius:6px;">CHECK OUT</button>
+      </div>
+      <div class="label-bar"><span><b>Block CTA</b> · Product page</span><span>btn-block</span></div>
+    </div>
+
+    <!-- Sizes -->
+    <div class="comp c-span-6">
+      <div class="stage tight">
+        <div class="sizes">
+          <button class="size">S</button>
+          <button class="size on">M</button>
+          <button class="size">L</button>
+          <button class="size">XL</button>
+          <button class="size lg">2XL</button>
+          <button class="size lg">3XL</button>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Size picker</b> · 44px hit target</span><span>.size · .size.on</span></div>
+    </div>
+
+    <!-- Qty + stock chip -->
+    <div class="comp c-span-3">
+      <div class="stage tight" style="flex-direction:column;align-items:flex-start;justify-content:center;">
+        <span class="tag tag-stock">Only 3 left</span>
+        <div class="qty">
+          <button>−</button>
+          <input value="1" />
+          <button>+</button>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Qty + stock</b></span><span>.qty · .tag-stock</span></div>
+    </div>
+
+    <!-- Tag chips -->
+    <div class="comp c-span-3">
+      <div class="stage tight" style="flex-direction:column;align-items:flex-start;">
+        <span class="tag">New drop</span>
+        <span class="tag tag-dark">Limited</span>
+        <span class="tag tag-accent">Member only</span>
+        <span class="tag tag-warn">Promo</span>
+      </div>
+      <div class="label-bar"><span><b>Tags</b> · Pill labels</span><span>.tag · .tag-dark · .tag-accent</span></div>
+    </div>
+
+    <!-- Header nav -->
+    <div class="comp c-span-12 dark">
+      <div class="stage" style="padding:0;">
+        <div style="background:#000;width:100%;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;color:#fff;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <img src="assets/logo-hori-purple.png" style="height:22px;filter:brightness(0) invert(1);" alt=""/>
+          </div>
+          <nav style="display:flex;gap:34px;font-size:12px;letter-spacing:0.14em;">
+            <a href="#" style="color:#fff;">T-SHIRT</a>
+            <a href="#" style="color:#fff;">JACKET</a>
+            <a href="#" style="color:#fff;">CAP</a>
+            <a href="#" style="color:#fff;">ACCESSORIES</a>
+            <a href="#" style="color:#fff;">OUR STORY</a>
+          </nav>
+          <div style="display:flex;gap:14px;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.6;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.6;"><path d="M6 7h12l-1.4 11.2a2 2 0 0 1-2 1.8H9.4a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Header</b> · Black, 84px height</span><span>.site-header</span></div>
+    </div>
+
+    <!-- Promo bar -->
+    <div class="comp c-span-12">
+      <div class="stage" style="padding:0;">
+        <div style="background:#000;color:#fff;width:100%;height:36px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:12px;letter-spacing:0.08em;">
+          <span class="tag tag-warn">PROMO</span>
+          <span>FREE SHIPPING WHEN YOUR ORDER IS ABOVE RM150 AND ABOVE</span>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Promo bar</b> · Top of page, 36px</span><span>.promo</span></div>
+    </div>
+
+    <!-- Form field -->
+    <div class="comp c-span-6">
+      <div class="stage">
+        <div class="field">
+          <label>Email</label>
+          <input value="you@tradveller.com"/>
+        </div>
+        <div class="field" style="max-width:160px;">
+          <label>Country</label>
+          <select><option>Malaysia</option><option>Singapore</option><option>Indonesia</option></select>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Form fields</b> · 48px height, 6px radius</span><span>.field</span></div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="comp c-span-6">
+      <div class="stage" style="align-items:stretch;flex-direction:column;justify-content:center;">
+        <div class="acc">
+          <div class="row">Specification <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="row">Materials <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="row">Shipping Info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Accordion</b> · Product details</span><span>.acc</span></div>
+    </div>
+
+    <!-- Product card -->
+    <div class="comp c-span-4">
+      <div class="stage" style="padding:24px;">
+        <article class="pcard" style="max-width: 280px; margin: 0 auto; box-shadow: 0 12px 24px -16px rgba(0,0,0,.15);">
+          <div class="img" style="background:linear-gradient(160deg,#b9b2a4 0%,#857e6f 100%);">
+            <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="200" cy="380" rx="160" ry="14" fill="rgba(0,0,0,0.18)"/>
+              <g transform="translate(40 200)">
+                <rect x="0" y="0" width="280" height="120" rx="6" fill="#f3f1ea"/>
+                <line x1="0" y1="40" x2="280" y2="40" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
+                <line x1="120" y1="0" x2="120" y2="120" stroke="rgba(0,0,0,.05)" stroke-width="1"/>
+                <g transform="translate(228 84)" fill="#6147FD">
+                  <path d="M3 0 L0 4 L0 12 L6 10 L8 16 L12 18 L12 36 L14 38 L16 38 L18 36 L18 18 L22 16 L24 10 L30 12 L30 4 L26 0 L22 3 L21 9 L18 11 L18 5 L15 5 L15 11 L12 9 L11 3 Z"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="info">
+            <div class="top">
+              <span class="name">Tradveller T-Shirt</span>
+              <span class="price">RM 60</span>
+            </div>
+            <div class="row">
+              <div class="stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+              </div>
+              <button class="bag" aria-label="Add">
+                <svg viewBox="0 0 24 24"><path d="M6 7h12l-1.4 11.2a2 2 0 0 1-2 1.8H9.4a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="label-bar"><span><b>Product card</b> · 1:1.18 image ratio</span><span>.pcard</span></div>
+    </div>
+
+    <!-- Stars / rating -->
+    <div class="comp c-span-4">
+      <div class="stage tight">
+        <div class="stars" style="display:flex;align-items:center;gap:2px;color:#FACC15;">
+          <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:currentColor;"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:currentColor;"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:currentColor;"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:currentColor;"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+          <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:#e5e7eb;"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>
+          <span style="margin-left:10px;font-family:'Sora';font-size:14px;color:var(--merch-ink);font-weight:500;">4.00</span>
+          <span style="font-family:'Sora';font-size:12px;color:var(--merch-mute);margin-left:6px;">Based on 1 review</span>
+        </div>
+      </div>
+      <div class="label-bar"><span><b>Rating</b> · 5-star + count</span><span>.stars</span></div>
+    </div>
+
+    <!-- Bag/cart icon button -->
+    <div class="comp c-span-4">
+      <div class="stage tight">
+        <button class="bag" style="background:#000;color:#fff;width:48px;height:48px;border-radius:999px;display:grid;place-items:center;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;"><path d="M6 7h12l-1.4 11.2a2 2 0 0 1-2 1.8H9.4a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        </button>
+        <button class="bag" style="background:var(--merch-accent);color:#fff;width:48px;height:48px;border-radius:999px;display:grid;place-items:center;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;"><polyline points="20 6 9 17 4 12"/></svg>
+        </button>
+        <button class="bag" style="background:#fff;color:#000;border:1px solid var(--merch-line);width:48px;height:48px;border-radius:999px;display:grid;place-items:center;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="label-bar"><span><b>Icon button</b> · 48px circle</span><span>.bag</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 · PRODUCT SYSTEM
+============================================================ -->
+<section class="docsection docpage" id="products" data-screen-label="06 Products">
+  <header class="shead">
+    <div class="num">§ 06 / Product</div>
+    <h2>Product system
+      <small>Four categories. One naming pattern. One currency. Tight curation — the shop is a list of essentials, not a long-tail catalogue.</small>
+    </h2>
+  </header>
+
+  <div class="product-system">
+    <div class="cat-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M4 7l4-3h8l4 3-2 4h-2v9H8v-9H6z"/></svg>
+      </div>
+      <span class="pill">01 / T-SHIRT</span>
+      <h4>T-Shirt</h4>
+      <p style="font-size:13px;color:var(--merch-mute);line-height:1.55;">Soft cotton, oversized cuts, minimalist graphic prints. The line’s entry point.</p>
+      <div class="meta">
+        <span>Price</span><b>RM 30 — 60</b>
+        <span>Sizes</span><b>S · M · L · XL · 2XL · 3XL</b>
+        <span>SKU prefix</span><b>TVLR-T</b>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M5 7l4-3 1 2h4l1-2 4 3-2 4-2-1v10H9V10l-2 1z"/></svg>
+      </div>
+      <span class="pill">02 / JACKET</span>
+      <h4>Jacket</h4>
+      <p style="font-size:13px;color:var(--merch-mute);line-height:1.55;">Field-jacket silhouette, technical cotton blend. Made for travel days.</p>
+      <div class="meta">
+        <span>Price</span><b>RM 120 — 180</b>
+        <span>Sizes</span><b>S · M · L · XL · 2XL</b>
+        <span>SKU prefix</span><b>TVLR-J</b>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M4 14c0-5 4-8 8-8s8 3 8 8H4z"/><line x1="2" y1="16" x2="22" y2="16"/></svg>
+      </div>
+      <span class="pill">03 / CAP</span>
+      <h4>Cap</h4>
+      <p style="font-size:13px;color:var(--merch-mute);line-height:1.55;">Six-panel structured cap, bull embroidery on front panel, metal closure.</p>
+      <div class="meta">
+        <span>Price</span><b>RM 50 — 60</b>
+        <span>Sizes</span><b>One size</b>
+        <span>SKU prefix</span><b>TVLR-C</b>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><path d="M11 11l9 9"/></svg>
+      </div>
+      <span class="pill">04 / ACCESSORIES</span>
+      <h4>Accessories</h4>
+      <p style="font-size:13px;color:var(--merch-mute);line-height:1.55;">Carabiners, lanyards, totes, sticker packs. Small carries for the long day.</p>
+      <div class="meta">
+        <span>Price</span><b>RM 20 — 40</b>
+        <span>Sizes</span><b>One size</b>
+        <span>SKU prefix</span><b>TVLR-A</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Naming + pricing convention -->
+  <div style="margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div class="cat-card" style="background:#000;color:#fff;border-color:#000;">
+      <span class="pill" style="background:var(--merch-accent);">Naming pattern</span>
+      <h4 style="color:#fff;font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:500;letter-spacing:0.02em;">Tradveller&nbsp;[Category]</h4>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;">Always lead with the parent brand. Examples: <b style="color:#fff;">Tradveller T-Shirt</b>, <b style="color:#fff;">Tradveller Jackets</b>, <b style="color:#fff;">Tradveller Graphic Oversize T</b>. For special drops, append the drop name after the category. Never invent product nicknames.</p>
+    </div>
+    <div class="cat-card" style="background:#000;color:#fff;border-color:#000;">
+      <span class="pill" style="background:var(--merch-accent);">Pricing format</span>
+      <h4 style="color:#fff;font-family:'Sora';font-size:32px;font-weight:600;">RM&nbsp;120</h4>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;">Currency in caps, hard space before the number, no decimals on round prices. <code style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;">RM 30</code>, <code style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;">RM 120</code>. Strike-through old price on sale: <s style="color:rgba(255,255,255,.5);">RM 80</s>&nbsp;&nbsp;<b style="color:#fff;">RM 60</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     07 · PAGE TEMPLATES
+============================================================ -->
+<section class="docsection docpage" id="templates" data-screen-label="07 Templates">
+  <header class="shead">
+    <div class="num">§ 07 / Pages</div>
+    <h2>Page templates
+      <small>The shop runs on six templates. Each maintains the same header, promo bar, and footer — what changes is the body grid.</small>
+    </h2>
+  </header>
+
+  <div class="templates">
+    <!-- Landing -->
+    <a class="tmpl" href="Landing Page.html">
+      <div class="frame">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#fff"/>
+          <rect x="0" y="0" width="320" height="6" fill="#000"/>
+          <rect x="0" y="6" width="320" height="14" fill="#0a0a14"/>
+          <rect x="0" y="20" width="320" height="62" fill="#0a0a14"/>
+          <text x="160" y="56" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="14" font-weight="800" letter-spacing="2">TRADVELLER</text>
+          <text x="160" y="68" text-anchor="middle" fill="#c7c6da" font-family="Sora" font-size="5" font-style="italic">We Trade &amp; We Travel</text>
+          <!-- products row -->
+          <g>
+            <rect x="14" y="90" width="68" height="56" rx="3" fill="#f4f2ec"/>
+            <rect x="90" y="90" width="68" height="56" rx="3" fill="#1a1a26"/>
+            <rect x="166" y="90" width="68" height="56" rx="3" fill="#3a4b3a"/>
+            <rect x="242" y="90" width="64" height="56" rx="3" fill="#e8e3d2"/>
+          </g>
+          <!-- collection -->
+          <rect x="14" y="156" width="146" height="50" rx="3" fill="#2a3825"/>
+          <rect x="166" y="156" width="68" height="24" rx="3" fill="#e0d9c4"/>
+          <rect x="166" y="184" width="68" height="22" rx="3" fill="#1a1a22"/>
+          <rect x="242" y="156" width="64" height="50" rx="3" fill="#14182a"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="n">§ 07.1</div>
+          <div class="t">Landing</div>
+        </div>
+        <span class="open">Open →</span>
+      </div>
+    </a>
+
+    <!-- Product -->
+    <div class="tmpl">
+      <div class="frame">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#0a0a14"/>
+          <rect x="0" y="0" width="320" height="6" fill="#000"/>
+          <rect x="0" y="6" width="320" height="14" fill="#0a0a14"/>
+          <!-- gallery left -->
+          <rect x="14" y="32" width="150" height="100" rx="4" fill="#fff"/>
+          <rect x="170" y="32" width="62" height="60" rx="4" fill="#16161c"/>
+          <text x="201" y="68" text-anchor="middle" fill="#fff" font-family="Orbitron" font-size="10" font-weight="800">TVRL.</text>
+          <rect x="170" y="98" width="62" height="34" rx="4" fill="#1c2240"/>
+          <!-- info right -->
+          <rect x="240" y="32" width="66" height="6" fill="#fff"/>
+          <rect x="240" y="42" width="50" height="4" fill="#888"/>
+          <rect x="240" y="58" width="14" height="10" fill="#444"/>
+          <rect x="258" y="58" width="14" height="10" fill="#fff"/>
+          <rect x="276" y="58" width="14" height="10" fill="#444"/>
+          <rect x="240" y="80" width="66" height="18" rx="2" fill="#fff"/>
+          <text x="273" y="92" text-anchor="middle" fill="#000" font-family="Sora" font-size="6" font-weight="600">CHECK OUT</text>
+          <rect x="240" y="108" width="66" height="3" fill="#333"/>
+          <rect x="240" y="118" width="66" height="3" fill="#333"/>
+          <rect x="240" y="128" width="66" height="3" fill="#333"/>
+          <!-- you may also like -->
+          <rect x="14" y="150" width="60" height="50" rx="3" fill="#1a1a22"/>
+          <rect x="80" y="150" width="60" height="50" rx="3" fill="#1a1a22"/>
+          <rect x="146" y="150" width="60" height="50" rx="3" fill="#1a1a22"/>
+          <rect x="212" y="150" width="60" height="50" rx="3" fill="#1a1a22"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="n">§ 07.2</div>
+          <div class="t">Product</div>
+        </div>
+        <span class="open">Spec</span>
+      </div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="tmpl">
+      <div class="frame">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#fff"/>
+          <rect x="0" y="0" width="320" height="6" fill="#000"/>
+          <rect x="0" y="6" width="320" height="14" fill="#0a0a14"/>
+          <text x="160" y="50" text-anchor="middle" fill="#0a0a0f" font-family="Sora" font-size="18" font-weight="600">Our Story</text>
+          <!-- copy lines -->
+          <g fill="#cccfd4">
+            <rect x="50" y="70" width="220" height="3" rx="1"/>
+            <rect x="50" y="80" width="220" height="3" rx="1"/>
+            <rect x="50" y="90" width="180" height="3" rx="1"/>
+            <rect x="50" y="106" width="220" height="3" rx="1"/>
+            <rect x="50" y="116" width="220" height="3" rx="1"/>
+            <rect x="50" y="126" width="160" height="3" rx="1"/>
+            <rect x="50" y="142" width="220" height="3" rx="1"/>
+            <rect x="50" y="152" width="200" height="3" rx="1"/>
+          </g>
+          <rect x="50" y="172" width="60" height="18" rx="9" fill="#0a0a0f"/>
+          <text x="80" y="184" text-anchor="middle" fill="#fff" font-family="Sora" font-size="6">Shop now</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="n">§ 07.3</div>
+          <div class="t">Our Story</div>
+        </div>
+        <span class="open">Spec</span>
+      </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="tmpl">
+      <div class="frame">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#0a0a14"/>
+          <rect x="0" y="0" width="320" height="220" fill="rgba(0,0,0,.5)"/>
+          <rect x="100" y="20" width="200" height="180" rx="6" fill="#0a0a14" stroke="#222" stroke-width="1"/>
+          <text x="116" y="38" fill="#fff" font-family="Sora" font-size="9" font-weight="600">2 items</text>
+          <line x1="116" y1="46" x2="284" y2="46" stroke="#222"/>
+          <!-- items -->
+          <rect x="116" y="56" width="30" height="34" rx="3" fill="#1a1a22"/>
+          <rect x="152" y="58" width="80" height="5" fill="#fff"/>
+          <rect x="152" y="68" width="40" height="4" fill="#888"/>
+          <rect x="152" y="80" width="50" height="8" rx="2" fill="#0a0a14" stroke="#444"/>
+          <rect x="116" y="100" width="30" height="34" rx="3" fill="#1a1a22"/>
+          <rect x="152" y="102" width="80" height="5" fill="#fff"/>
+          <rect x="152" y="112" width="40" height="4" fill="#888"/>
+          <!-- checkout -->
+          <rect x="116" y="160" width="168" height="22" rx="2" fill="#fff"/>
+          <text x="200" y="174" text-anchor="middle" fill="#000" font-family="Sora" font-size="7" font-weight="600">CHECKOUT ·  RM 90.00</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="n">§ 07.4</div>
+          <div class="t">Cart overlay</div>
+        </div>
+        <span class="open">Spec</span>
+      </div>
+    </div>
+
+    <!-- Payment -->
+    <div class="tmpl">
+      <div class="frame">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#0a0a14"/>
+          <rect x="20" y="20" width="280" height="180" rx="4" fill="#0a0a14" stroke="#222"/>
+          <text x="36" y="40" fill="#fff" font-family="Sora" font-size="9" font-weight="600">Payment</text>
+          <rect x="36" y="52" width="248" height="20" rx="2" fill="#0a0a14" stroke="#444"/>
+          <text x="50" y="66" fill="#888" font-family="Sora" font-size="7">Credit card</text>
+          <rect x="36" y="80" width="248" height="20" rx="2" fill="#0a0a14" stroke="#222"/>
+          <rect x="36" y="108" width="120" height="20" rx="2" fill="#0a0a14" stroke="#222"/>
+          <rect x="164" y="108" width="120" height="20" rx="2" fill="#0a0a14" stroke="#222"/>
+          <rect x="36" y="136" width="248" height="22" rx="2" fill="#fff"/>
+          <text x="160" y="151" text-anchor="middle" fill="#000" font-family="Sora" font-size="7" font-weight="600">Pay now</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="n">§ 07.5</div>
+          <div class="t">Payment</div>
+        </div>
+        <span class="open">Spec</span>
+      </div>
+    </div>
+
+    <!-- 404 -->
+    <div class="tmpl">
+      <div class="frame">
+        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="220" fill="#fff"/>
+          <rect x="0" y="0" width="320" height="6" fill="#000"/>
+          <rect x="0" y="6" width="320" height="14" fill="#0a0a14"/>
+          <text x="160" y="100" text-anchor="middle" fill="#0a0a0f" font-family="Orbitron" font-size="32" font-weight="800">404</text>
+          <text x="160" y="120" text-anchor="middle" fill="#888" font-family="Sora" font-size="7">Page Not Found</text>
+          <rect x="110" y="140" width="100" height="22" rx="11" fill="#0a0a0f"/>
+          <text x="160" y="154" text-anchor="middle" fill="#fff" font-family="Sora" font-size="7" font-weight="500">RETURN HOME</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="n">§ 07.6</div>
+          <div class="t">Page Not Found</div>
+        </div>
+        <span class="open">Spec</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     08 · VOICE & SLOGANS
+============================================================ -->
+<section class="docsection docpage" id="voice" data-screen-label="08 Voice">
+  <header class="shead">
+    <div class="num">§ 08 / Voice</div>
+    <h2>Voice &amp; slogans
+      <small>Five lines we own. Use them — don’t invent new ones without sign-off. The brand is recognisable by its silence as much as its words.</small>
+    </h2>
+  </header>
+
+  <div class="voice-grid">
+    <article class="voice-card">
+      <span class="label">Master tagline</span>
+      <div class="slogan italic">We Trade &amp; We Travel<br/>— with Style.</div>
+      <span class="use">Hero · Footer · Hangtag · About</span>
+    </article>
+
+    <article class="voice-card light">
+      <span class="label" style="color:var(--merch-accent);">Brand line</span>
+      <div class="slogan">Designed for<br/>movement.<br/>Inspired by<br/>mindset.</div>
+      <span class="use">Our Story · Editorial · Lookbook</span>
+    </article>
+
+    <article class="voice-card">
+      <span class="label">Closing line</span>
+      <div class="slogan italic">Trade with purpose.<br/>Travel with meaning.<br/>Live with balance.</div>
+      <span class="use">About · Newsletter · Hangtag back</span>
+    </article>
+
+    <article class="voice-card light">
+      <span class="label" style="color:var(--merch-accent);">Welcome line</span>
+      <div class="slogan italic">Welcome to Tradveller.<br/>Your journey<br/>starts here.</div>
+      <span class="use">Onboarding · First-purchase note · 404</span>
+    </article>
+
+    <article class="voice-card" style="grid-column: span 2; text-align:center; padding: 64px; display:grid; place-items:center;">
+      <span class="label">Apparel mark</span>
+      <div class="slogan" style="font-size: clamp(64px, 10vw, 156px);">TVRL<span style="color:var(--merch-accent);">.</span></div>
+      <span class="use">Graphic tee print · Sticker · Cap embroidery alt</span>
+    </article>
+  </div>
+
+  <!-- Do & Don't -->
+  <div class="rules" style="margin-top: 80px;">
+    <div class="rule do">
+      <div class="head"><span>✓ Do</span><span>Keep · Reinforce</span></div>
+      <ul>
+        <li><span><b>Use sentence case in body copy.</b> &ldquo;Our clothing is made for modern mobility.&rdquo; Never title-case marketing copy.</span></li>
+        <li><span><b>Lead with the parent name.</b> &ldquo;Tradveller T-Shirt,&rdquo; not &ldquo;T-Shirt&rdquo;. Every product carries the brand.</span></li>
+        <li><span><b>Keep the bull purple, only.</b> Brand purple appears as the bull mark or a single accent state — never as a background fill or large area of colour.</span></li>
+        <li><span><b>RM with a hard space.</b> <code style="background:var(--merch-surface);padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px;">RM&nbsp;60</code>, always. Never <code style="background:var(--merch-surface);padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px;">RM60</code> or <code style="background:var(--merch-surface);padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px;">$60</code>.</span></li>
+        <li><span><b>Photograph against neutral grounds.</b> Stone, sand, charcoal, paper. The clothing carries the contrast; the set doesn&rsquo;t need to.</span></li>
+      </ul>
+    </div>
+    <div class="rule dont">
+      <div class="head"><span>✕ Don&rsquo;t</span><span>Reject · Rework</span></div>
+      <ul>
+        <li><span><b>Don&rsquo;t use emoji or crypto slang.</b> No moons, rockets, &ldquo;gm,&rdquo; or &ldquo;WAGMI.&rdquo; The aesthetic dies on contact.</span></li>
+        <li><span><b>Don&rsquo;t stretch or recolour the wordmark.</b> Horizontal at 100% width, brand purple or white only.</span></li>
+        <li><span><b>Don&rsquo;t use exclamation marks in headlines.</b> Confidence whispers — only <em>Only 3 pieces left!</em> stock callouts are exempt.</span></li>
+        <li><span><b>Don&rsquo;t add gradients or background patterns to the shop.</b> Photography is the only decoration. The grid does the rest.</span></li>
+        <li><span><b>Don&rsquo;t price with decimals on round numbers.</b> &ldquo;RM 60&rdquo;, never &ldquo;RM 60.00&rdquo;. Decimals only when there are real cents.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COLOPHON
+============================================================ -->
+<footer class="colophon" data-screen-label="Colophon">
+  <div class="docpage">
+    <div class="row">
+      <div>
+        <h5>Brand System</h5>
+        <p>Tradveller Merch is the apparel line of the Tradveller brand. This document captures the visual and verbal system that runs the shop — for designers, copywriters, and production partners.</p>
+      </div>
+      <div>
+        <h5>Reference</h5>
+        <ul>
+          <li>Landing → <a href="Landing Page.html" style="color:var(--merch-accent);">Open</a></li>
+          <li>Logo · /assets/logo-*.png</li>
+          <li>Tokens · colors_and_type.css</li>
+          <li>Merch · tradveller-merch.css</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Voice library</h5>
+        <ul>
+          <li>We Trade &amp; We Travel — with Style</li>
+          <li>Designed for movement.</li>
+          <li>Less, but better.</li>
+          <li>Your journey starts here.</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>Brand Ops · brand@tradveller.com</li>
+          <li>Instagram · @TradvellerTrend</li>
+          <li>Issued · May 2026</li>
+          <li>Doc · TVLR-DS-01 · v1</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>&copy; 2022 Tradveller Trend · All rights reserved</span>
+      <span>The uniform of the new generation</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

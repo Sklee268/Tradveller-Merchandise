@@ -1,0 +1,214 @@
+/* ============================================================
+   CQA DESIGN SYSTEM (TRADVELLER) — Colors & Type
+   AI-Enhanced Crypto Quant Alchemist
+   ============================================================ */
+
+/* Webfonts:
+   - Zilla Slab    → BODY + HEADINGS (brand-supplied .ttf in /fonts)
+   - Orbitron      → display / wordmark substitute (blocky geometric, still substituted)
+   - Rajdhani      → secondary display / UI eyebrows
+   - JetBrains Mono → code / data tables / tickers
+   See /fonts/README.md for substitution notes. */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@font-face { font-family: 'Zilla Slab'; font-style: normal; font-weight: 300; src: url('fonts/ZillaSlab-Light.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: italic; font-weight: 300; src: url('fonts/ZillaSlab-LightItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: normal; font-weight: 400; src: url('fonts/ZillaSlab-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: italic; font-weight: 400; src: url('fonts/ZillaSlab-Italic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: normal; font-weight: 500; src: url('fonts/ZillaSlab-Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: italic; font-weight: 500; src: url('fonts/ZillaSlab-MediumItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: normal; font-weight: 600; src: url('fonts/ZillaSlab-SemiBold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: italic; font-weight: 600; src: url('fonts/ZillaSlab-SemiBoldItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: normal; font-weight: 700; src: url('fonts/ZillaSlab-Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Zilla Slab'; font-style: italic; font-weight: 700; src: url('fonts/ZillaSlab-BoldItalic.ttf') format('truetype'); font-display: swap; }
+
+/* Gotham — full family, brand-supplied */
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 100; src: url('fonts/Gotham-Thin.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 100; src: url('fonts/Gotham-ThinItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 200; src: url('fonts/Gotham-XLight.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 200; src: url('fonts/Gotham-XLightItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 300; src: url('fonts/Gotham-Light.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 300; src: url('fonts/Gotham-LightItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 400; src: url('fonts/Gotham-Book.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 400; src: url('fonts/Gotham-BookItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 500; src: url('fonts/Gotham-Medium.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 500; src: url('fonts/Gotham-MediumItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 700; src: url('fonts/Gotham-Bold.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 700; src: url('fonts/Gotham-BoldItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 800; src: url('fonts/Gotham-Black.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 800; src: url('fonts/Gotham-BlackItalic.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: normal; font-weight: 900; src: url('fonts/Gotham-Ultra.otf') format('opentype'); font-display: swap; }
+@font-face { font-family: 'Gotham'; font-style: italic; font-weight: 900; src: url('fonts/Gotham-UltraItalic.otf') format('opentype'); font-display: swap; }
+
+:root {
+  /* ---------- BRAND CORE ---------- */
+  --tvlr-purple:        #6147FD;   /* primary brand, sampled from logo */
+  --tvlr-purple-deep:   #3D24E0;
+  --tvlr-purple-glow:   #8B7BFF;
+  --tvlr-purple-soft:   #B7AEFE;
+  --tvlr-purple-wash:   #EDEAFF;
+
+  /* Cosmic / event-poster palette (deep space gradient stops) */
+  --tvlr-void:          #03020A;
+  --tvlr-night:         #0B0820;
+  --tvlr-midnight:      #15113A;
+  --tvlr-cosmos:        #2B2064;
+
+  /* ---------- NEUTRALS (dark-first) ---------- */
+  --tvlr-ink-0:         #000000;
+  --tvlr-ink-1:         #08070F;
+  --tvlr-ink-2:         #11101C;
+  --tvlr-ink-3:         #1B1A2A;
+  --tvlr-ink-4:         #2A2940;
+  --tvlr-line:          #353354;
+  --tvlr-line-soft:     #25243A;
+
+  --tvlr-mist-1:        #6B6A85;
+  --tvlr-mist-2:        #9C9BB4;
+  --tvlr-mist-3:        #C7C6DA;
+  --tvlr-paper:         #F5F4FA;
+  --tvlr-white:         #FFFFFF;
+
+  /* ---------- SEMANTIC (trading) ---------- */
+  --tvlr-bull:          #18C964;   /* gains / long */
+  --tvlr-bear:          #FF4D6D;   /* losses / short */
+  --tvlr-warn:          #F8B400;
+  --tvlr-info:          #3DB8FF;
+
+  /* ---------- ROLE TOKENS (dark theme default) ---------- */
+  --bg:                 var(--tvlr-void);
+  --bg-elev-1:          var(--tvlr-ink-1);
+  --bg-elev-2:          var(--tvlr-ink-2);
+  --bg-elev-3:          var(--tvlr-ink-3);
+  --bg-accent:          var(--tvlr-midnight);
+
+  --fg-1:               var(--tvlr-white);          /* primary text */
+  --fg-2:               var(--tvlr-mist-3);         /* secondary text */
+  --fg-3:               var(--tvlr-mist-2);         /* tertiary / captions */
+  --fg-4:               var(--tvlr-mist-1);         /* disabled / hints */
+  --fg-on-purple:       var(--tvlr-white);
+
+  --border:             var(--tvlr-line);
+  --border-soft:        var(--tvlr-line-soft);
+  --accent:             var(--tvlr-purple);
+  --accent-hover:       var(--tvlr-purple-glow);
+  --accent-press:       var(--tvlr-purple-deep);
+
+  /* ---------- GRADIENTS ---------- */
+  --grad-cosmos:        radial-gradient(120% 80% at 50% 0%, #2B2064 0%, #15113A 35%, #08070F 75%, #03020A 100%);
+  --grad-purple:        linear-gradient(135deg, #6147FD 0%, #3D24E0 100%);
+  --grad-purple-glow:   linear-gradient(135deg, #8B7BFF 0%, #6147FD 60%, #3D24E0 100%);
+  --grad-cqa-title:     linear-gradient(180deg, #B7AEFE 0%, #6147FD 50%, #3D24E0 100%);
+
+  /* ---------- ELEVATION ---------- */
+  --shadow-sm:          0 1px 2px rgba(0,0,0,.5);
+  --shadow-md:          0 6px 18px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.3);
+  --shadow-lg:          0 24px 60px rgba(0,0,0,.55), 0 8px 18px rgba(0,0,0,.35);
+  --shadow-glow:        0 0 0 1px rgba(139,123,255,.3), 0 8px 32px rgba(97,71,253,.4);
+  --shadow-glow-strong: 0 0 24px rgba(97,71,253,.6), 0 0 80px rgba(97,71,253,.25);
+  --inset-edge:         inset 0 1px 0 rgba(255,255,255,.06);
+
+  /* ---------- RADII ---------- */
+  --r-xs:  4px;
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+  --r-2xl: 28px;
+  --r-full: 9999px;
+
+  /* ---------- SPACING (4px base) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display: 'Orbitron', 'Eurostile', 'Bank Gothic', system-ui, sans-serif;
+  --font-display-alt: 'Rajdhani', 'Orbitron', system-ui, sans-serif;
+  /* Body uses brand-supplied Gotham (full family, Thin → Ultra + italics). */
+  --font-body: 'Gotham', 'Montserrat', 'Proxima Nova', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Zilla Slab', 'Roboto Slab', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* ---------- TYPE SCALE ---------- */
+  --t-display-2xl: 800 96px/1 var(--font-display);     /* hero / event poster */
+  --t-display-xl:  800 72px/1.05 var(--font-display);
+  --t-display-lg:  700 56px/1.1 var(--font-display);
+  --t-display-md:  700 40px/1.15 var(--font-display);
+
+  --t-h1: 700 48px/1.15 var(--font-body);
+  --t-h2: 700 36px/1.2 var(--font-body);
+  --t-h3: 600 28px/1.25 var(--font-body);
+  --t-h4: 600 22px/1.3 var(--font-body);
+  --t-h5: 600 18px/1.35 var(--font-body);
+
+  --t-body-lg:  400 18px/1.55 var(--font-body);
+  --t-body:     400 16px/1.55 var(--font-body);
+  --t-body-sm:  400 14px/1.5 var(--font-body);
+  --t-caption:  500 12px/1.4 var(--font-body);
+
+  --t-label:    600 12px/1 var(--font-body);
+  --t-label-display: 600 12px/1 var(--font-display-alt);
+
+  --t-mono:     400 14px/1.5 var(--font-mono);
+  --t-mono-sm:  400 12px/1.4 var(--font-mono);
+  --t-ticker:   700 16px/1 var(--font-mono);
+
+  --tracking-display: 0.06em;   /* Orbitron looks better with extra tracking */
+  --tracking-label:   0.12em;   /* Eyebrows / micro labels */
+  --tracking-body:    0;
+}
+
+/* ============================================================
+   SEMANTIC TYPE CLASSES
+   Apply these directly. Pair with utility classes for color.
+   ============================================================ */
+
+.tvlr-display-2xl { font: var(--t-display-2xl); letter-spacing: var(--tracking-display); text-transform: uppercase; }
+.tvlr-display-xl  { font: var(--t-display-xl);  letter-spacing: var(--tracking-display); text-transform: uppercase; }
+.tvlr-display-lg  { font: var(--t-display-lg);  letter-spacing: var(--tracking-display); text-transform: uppercase; }
+.tvlr-display-md  { font: var(--t-display-md);  letter-spacing: var(--tracking-display); text-transform: uppercase; }
+
+.tvlr-h1 { font: var(--t-h1); letter-spacing: -0.02em; }
+.tvlr-h2 { font: var(--t-h2); letter-spacing: -0.015em; }
+.tvlr-h3 { font: var(--t-h3); letter-spacing: -0.01em; }
+.tvlr-h4 { font: var(--t-h4); }
+.tvlr-h5 { font: var(--t-h5); }
+
+.tvlr-body-lg { font: var(--t-body-lg); }
+.tvlr-body    { font: var(--t-body); }
+.tvlr-body-sm { font: var(--t-body-sm); }
+.tvlr-caption { font: var(--t-caption); color: var(--fg-3); }
+
+.tvlr-eyebrow {
+  font: var(--t-label-display);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tvlr-mono     { font: var(--t-mono); }
+.tvlr-mono-sm  { font: var(--t-mono-sm); }
+.tvlr-ticker   { font: var(--t-ticker); font-variant-numeric: tabular-nums; }
+
+/* Default tag styling when this stylesheet is applied to <body> */
+.tvlr-root {
+  background: var(--bg);
+  color: var(--fg-1);
+  font: var(--t-body);
+  -webkit-font-smoothing: antialiased;
+}
+.tvlr-root h1 { font: var(--t-h1); letter-spacing: -0.02em; }
+.tvlr-root h2 { font: var(--t-h2); letter-spacing: -0.015em; }
+.tvlr-root h3 { font: var(--t-h3); }
+.tvlr-root h4 { font: var(--t-h4); }
+.tvlr-root p  { font: var(--t-body); color: var(--fg-2); }
+.tvlr-root code, .tvlr-root pre { font: var(--t-mono); }
