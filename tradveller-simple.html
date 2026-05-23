@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tradveller — We Trade & We Travel, with Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Orbitron:wght@700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   STYLES — you don't need to edit anything here.
+   Skip down to the SHOP = { ... } block at the bottom to edit content.
+   ============================================================ */
+:root {
+  --ink: #0A0A0F;
+  --paper: #FFFFFF;
+  --accent: #6147FD;
+  --void: #08070F;
+  --mist: #6B6B78;
+  --cloud: #A8A8B4;
+  --line: #E8E8EE;
+  --surface: #F7F7FA;
+  --promo: #FACC15;
+  --r: 8px; --r-pill: 999px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px; line-height: 1.6;
+  color: var(--ink); background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { background: none; border: 0; cursor: pointer; font-family: inherit; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+ul { list-style: none; }
+::selection { background: var(--accent); color: #fff; }
+.shell { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+/* --- PROMO BAR --- */
+.promo {
+  background: var(--ink); color: #fff;
+  height: 36px; display: flex; align-items: center; justify-content: center;
+  gap: 12px; font-size: 12px; letter-spacing: 0.06em;
+}
+.promo .tag {
+  background: var(--promo); color: var(--ink);
+  font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+}
+
+/* --- HEADER --- */
+.site-header {
+  background: var(--ink); color: #fff;
+  position: sticky; top: 0; z-index: 40;
+}
+.site-header .row {
+  max-width: 1280px; margin: 0 auto; height: 80px; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand .bull { width: 26px; height: 34px; }
+.brand .bull path { fill: var(--accent); }
+.brand .wordmark {
+  font-family: 'Orbitron', sans-serif; font-weight: 800;
+  font-size: 18px; letter-spacing: 0.14em; color: #fff;
+}
+.site-header nav { display: flex; gap: 30px; }
+.site-header nav a {
+  font-size: 12px; letter-spacing: 0.16em; font-weight: 500;
+  color: rgba(255,255,255,0.85); padding: 6px 0; position: relative;
+  transition: color 0.2s;
+}
+.site-header nav a:hover { color: #fff; }
+.site-header nav a::after {
+  content:''; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.site-header nav a:hover::after { transform: scaleX(1); }
+.site-header .actions { display: flex; gap: 8px; }
+.site-header .actions button {
+  width: 40px; height: 40px; border-radius: var(--r-pill);
+  display: grid; place-items: center; color: #fff;
+  transition: background 0.2s;
+  position: relative;
+}
+.site-header .actions button:hover { background: rgba(255,255,255,0.08); }
+.site-header .actions svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.site-header .badge {
+  position: absolute; top: 4px; right: 4px;
+  background: var(--accent); color: #fff;
+  min-width: 18px; height: 18px; border-radius: var(--r-pill); padding: 0 5px;
+  font-size: 10px; font-weight: 600;
+  display: grid; place-items: center;
+  font-family: 'JetBrains Mono', monospace;
+}
+@media (max-width: 800px) { .site-header nav { display: none; } }
+
+/* --- HERO --- */
+.hero {
+  background: var(--ink); color: #fff;
+  min-height: 600px; padding: 80px 32px;
+  display: grid; place-items: center;
+  position: relative; overflow: hidden;
+}
+.hero .figure {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+}
+.hero .figure .bull {
+  width: 520px; max-width: 60%; opacity: 0.55;
+  filter: drop-shadow(0 24px 64px rgba(0,0,0,0.6));
+  animation: float 8s ease-in-out infinite;
+}
+.hero .figure .bull path { fill: var(--accent); }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.hero .copy { position: relative; text-align: center; max-width: 880px; }
+.hero .eyebrow {
+  display: block; margin-bottom: 22px;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); font-weight: 500;
+}
+.hero h1 {
+  font-family: 'Orbitron', sans-serif; font-weight: 800;
+  font-size: clamp(56px, 11vw, 142px);
+  letter-spacing: 0.04em; line-height: 0.95;
+  margin-bottom: 18px;
+}
+.hero .sub {
+  font-style: italic; font-weight: 300;
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(255,255,255,0.85);
+}
+
+/* --- SECTION TITLE --- */
+.sec { padding: 96px 0; }
+.sec-title { margin-bottom: 56px; }
+.sec-title small {
+  display: block; margin-bottom: 14px;
+  font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--mist); font-weight: 500;
+}
+.sec-title h2 {
+  font-weight: 600; font-size: clamp(36px, 5vw, 52px);
+  letter-spacing: -0.02em; line-height: 1.05;
+}
+
+/* --- PRODUCT CARDS --- */
+.products {
+  display: grid; gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1024px) { .products { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px)  { .products { grid-template-columns: 1fr; } }
+.pcard {
+  background: var(--paper); border-radius: var(--r);
+  overflow: hidden; cursor: pointer;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.pcard:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -24px rgba(10,10,15,0.18); }
+.pcard .img {
+  aspect-ratio: 1 / 1.18; position: relative; overflow: hidden;
+  background: var(--surface);
+}
+.pcard .img img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.pcard .img .fallback {
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  font-family: 'Orbitron', sans-serif; font-weight: 800;
+  font-size: 80px; color: rgba(10,10,15,0.08);
+  letter-spacing: 0.04em;
+}
+.pcard .corner-tag {
+  position: absolute; top: 14px; left: 14px; z-index: 2;
+  background: var(--paper); color: var(--ink);
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 6px 10px; border-radius: 4px;
+}
+.pcard .info {
+  padding: 20px 22px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.pcard .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.pcard .name { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+.pcard .price { font-weight: 600; font-size: 17px; white-space: nowrap; }
+.pcard .desc {
+  font-size: 13px; color: var(--mist); line-height: 1.5;
+}
+.pcard .row { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+.pcard .stars { display: flex; align-items: center; gap: 2px; color: var(--promo); }
+.pcard .stars svg { width: 14px; height: 14px; fill: currentColor; }
+.pcard .stars .ct { font-size: 12px; color: var(--mist); margin-left: 6px; font-weight: 400; }
+.pcard .bag {
+  width: 36px; height: 36px; border-radius: var(--r-pill);
+  background: var(--ink); color: #fff;
+  display: grid; place-items: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.pcard .bag:hover { background: var(--accent); transform: rotate(-8deg) scale(1.08); }
+.pcard .bag svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+/* --- STORY --- */
+.story { padding: 96px 0; background: var(--paper); }
+.story .inner {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 80px; align-items: start;
+}
+@media (max-width: 900px) { .story .inner { grid-template-columns: 1fr; gap: 40px; } }
+.story .head { position: sticky; top: 110px; }
+.story .head small {
+  display: block; margin-bottom: 18px;
+  font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--mist); font-weight: 500;
+}
+.story .head h2 {
+  font-weight: 600; font-size: clamp(40px, 5vw, 56px);
+  letter-spacing: -0.025em; line-height: 1; margin-bottom: 20px;
+}
+.story .head h2 em { font-style: italic; font-weight: 300; color: var(--mist); }
+.story .essay { display: flex; flex-direction: column; gap: 22px; }
+.story .essay p { font-size: 17px; line-height: 1.65; max-width: 56ch; }
+.story .essay p.lede { font-size: 22px; font-weight: 400; line-height: 1.4; }
+.story .essay p strong { font-weight: 600; }
+
+/* --- REVIEWS --- */
+.reviews { padding: 96px 0; background: var(--surface); }
+.reviews .head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 48px; flex-wrap: wrap; gap: 24px;
+}
+.reviews .head small {
+  display: block; margin-bottom: 12px;
+  font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--mist); font-weight: 500;
+}
+.reviews .head h2 {
+  font-weight: 600; font-size: clamp(32px, 4vw, 44px);
+  letter-spacing: -0.02em;
+}
+.reviews .head .right { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mist); }
+.reviews .head .right .stars { display: flex; justify-content: flex-end; gap: 2px; color: var(--promo); margin-bottom: 8px; }
+.reviews .head .right .stars svg { width: 22px; height: 22px; fill: currentColor; }
+.reviews .head .right b { color: var(--ink); font-weight: 500; }
+.reviews .grid { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .reviews .grid { grid-template-columns: 1fr; } }
+.review {
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--r); padding: 28px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.review .stars { display: flex; gap: 2px; color: var(--promo); }
+.review .stars svg { width: 16px; height: 16px; fill: currentColor; }
+.review h4 { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+.review p { font-size: 14px; line-height: 1.6; color: #2c2c36; flex: 1; }
+.review .meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+.review .meta .who { font-weight: 500; }
+.review .meta .when { color: var(--mist); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+
+/* --- NEWSLETTER --- */
+.join {
+  background: var(--ink); color: #fff;
+  padding: 96px 32px;
+  position: relative; overflow: hidden;
+}
+.join .glow {
+  position: absolute; top: 50%; left: 50%;
+  width: 800px; height: 800px; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(97,71,253,0.18) 0%, transparent 60%);
+}
+.join .inner { max-width: 720px; margin: 0 auto; text-align: center; position: relative; }
+.join .bull-mini { display: inline-block; margin-bottom: 22px; }
+.join .bull-mini svg { width: 48px; height: 60px; }
+.join .bull-mini svg path { fill: var(--accent); }
+.join h2 {
+  font-weight: 600; font-size: clamp(32px, 4vw, 44px);
+  letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 14px;
+}
+.join h2 em { font-style: italic; font-weight: 300; color: var(--accent); }
+.join p { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 52ch; margin: 0 auto 28px; }
+.join form { display: flex; gap: 8px; max-width: 440px; margin: 0 auto; }
+.join form input {
+  flex: 1; height: 52px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r); padding: 0 16px; color: #fff;
+  font-size: 14px; font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+.join form input::placeholder { color: rgba(255,255,255,0.4); }
+.join form input:focus { border-color: var(--accent); }
+.join form button {
+  height: 52px; padding: 0 26px;
+  background: #fff; color: var(--ink); border-radius: var(--r);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+.join form button:hover { background: var(--accent); color: #fff; }
+.join .fine {
+  margin-top: 16px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: rgba(255,255,255,0.35);
+}
+.join .fine b { color: var(--accent); }
+
+/* --- FOOTER --- */
+.site-footer { background: var(--void); color: #fff; padding: 64px 32px 28px; }
+.site-footer .inner { max-width: 1280px; margin: 0 auto; }
+.site-footer .grid {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+@media (max-width: 900px) { .site-footer .grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 540px) { .site-footer .grid { grid-template-columns: 1fr; } }
+.site-footer .brandblock .mark { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.site-footer .brandblock p { font-size: 14px; color: rgba(255,255,255,0.5); max-width: 36ch; line-height: 1.65; }
+.site-footer h4 {
+  font-weight: 500; font-size: 12px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.site-footer ul li { margin-bottom: 8px; }
+.site-footer ul a {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.site-footer ul a:hover { color: var(--accent); }
+.site-footer .rule {
+  margin-top: 48px; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+.site-footer .rule b { color: var(--accent); }
+
+/* --- CART DRAWER (simple) --- */
+.cart-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(10,10,15,0.5); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.cart-overlay.on { opacity: 1; pointer-events: auto; }
+.cart-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 400px; max-width: 100vw;
+  background: var(--ink); color: #fff; z-index: 101;
+  transform: translateX(100%); transition: transform 0.4s var(--ease);
+  display: flex; flex-direction: column;
+}
+.cart-drawer.on { transform: translateX(0); }
+.cart-drawer .head {
+  padding: 22px 26px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cart-drawer .head h3 { font-weight: 600; font-size: 17px; }
+.cart-drawer .head .close { color: rgba(255,255,255,0.6); }
+.cart-drawer .head .close svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.cart-drawer .items { flex: 1; overflow-y: auto; padding: 20px 26px; }
+.cart-drawer .empty { text-align: center; color: var(--cloud); padding: 60px 0; font-size: 14px; }
+.cart-item {
+  display: grid; grid-template-columns: 56px 1fr auto;
+  gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px;
+}
+.cart-item .pic {
+  aspect-ratio: 1; background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  display: grid; place-items: center;
+}
+.cart-item .pic svg path { fill: var(--accent); }
+.cart-item .pic svg { width: 24px; height: 32px; }
+.cart-item .name { font-weight: 500; margin-bottom: 4px; }
+.cart-item .var { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--cloud); }
+.cart-item .price { font-weight: 600; align-self: start; }
+.cart-drawer .foot { padding: 22px 26px; border-top: 1px solid rgba(255,255,255,0.08); }
+.cart-drawer .total {
+  display: flex; justify-content: space-between;
+  font-size: 16px; font-weight: 600; margin-bottom: 18px;
+}
+.cart-drawer .total span:last-child { color: var(--accent); }
+.cart-drawer .checkout {
+  width: 100%; height: 48px;
+  background: #fff; color: var(--ink); border-radius: var(--r);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  display: grid; place-items: center; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.cart-drawer .checkout:hover { background: var(--accent); color: #fff; }
+
+/* --- REVEAL ON SCROLL --- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 540px) { .sec, .story, .reviews, .join { padding: 64px 0; } }
+</style>
+</head>
+
+<body>
+
+<!-- Bull mark — used everywhere -->
+<svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+  <symbol id="bull" viewBox="0 0 46 60">
+    <path d="M5 0 L0 6 L0 18 L9 15 L12 25 L18 28 L18 55 L21 58 L24 58 L27 55 L27 28 L33 25 L36 15 L45 18 L45 6 L40 0 L33 4 L32 14 L27 16 L27 8 L23 8 L23 16 L18 14 L17 4 Z"/>
+  </symbol>
+</svg>
+
+<!-- The whole page will be rendered into these containers by the script below -->
+<div id="app"></div>
+
+<!-- Cart drawer (separate from app, slides over everything) -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer"></aside>
+
+
+<script>
+/* ========================================================================
+   ╔════════════════════════════════════════════════════════════════════╗
+   ║                                                                    ║
+   ║   👇  EDIT EVERYTHING IN THE  SHOP  BLOCK BELOW                    ║
+   ║                                                                    ║
+   ║   This is the ONLY place you need to touch.                        ║
+   ║   The rest of the file (the rendering code at the bottom)          ║
+   ║   reads from here and builds the page automatically.               ║
+   ║                                                                    ║
+   ╚════════════════════════════════════════════════════════════════════╝
+   ======================================================================== */
+
+const SHOP = {
+
+  /* ──────────────────────────────────────────────────────────────────
+     1. BRAND BASICS
+     Change the wordmark, tagline, promo bar, currency, etc.
+     ────────────────────────────────────────────────────────────────── */
+  brand: {
+    wordmark: "TRADVELLER",
+    tagline: "We Trade & We Travel — with Style",
+    eyebrow: "INTRODUCING · SS26 COLLECTION",
+    currency: "RM",                                  // RM, $, €, £…
+    promo: "FREE SHIPPING ON ORDERS RM 150 AND ABOVE"
+  },
+
+  /* ──────────────────────────────────────────────────────────────────
+     2. NAVIGATION  — header menu items
+     Add or remove items by editing the array below.
+     ────────────────────────────────────────────────────────────────── */
+  nav: [
+    { label: "T-SHIRT",     link: "#products" },
+    { label: "JACKET",      link: "#products" },
+    { label: "CAP",         link: "#products" },
+    { label: "ACCESSORIES", link: "#products" },
+    { label: "OUR STORY",   link: "#story"    }
+  ],
+
+  /* ──────────────────────────────────────────────────────────────────
+     3. PRODUCTS  — your shop items
+     • To change a product: edit the text below.
+     • To add a product: copy any  { …block… }  and paste it in.
+     • To remove a product: delete the whole  { …block… }
+     • To add a photo:
+         1. Put your photo in an  images/  folder next to this HTML file
+         2. Change  "image": null  to  "image": "images/your-photo.jpg"
+       If image is null, a clean placeholder shows automatically.
+     ────────────────────────────────────────────────────────────────── */
+  products: [
+    {
+      tag:    "01 / T-SHIRT",
+      name:   "Tradveller T-Shirt",
+      price:  60,
+      desc:   "Soft cotton, oversized cut, signature TVRL. print.",
+      image:  null,                       // e.g. "images/tshirt.jpg"
+      rating: 5,
+      reviews: 124
+    },
+    {
+      tag:    "02 / JACKET",
+      name:   "Tradveller Jackets",
+      price:  120,
+      desc:   "Field-jacket silhouette in technical cotton.",
+      image:  null,
+      rating: 4,
+      reviews: 86
+    },
+    {
+      tag:    "03 / CAP",
+      name:   "Tradveller Cap",
+      price:  50,
+      desc:   "Six-panel structured cap with bull embroidery.",
+      image:  null,
+      rating: 5,
+      reviews: 52
+    },
+    {
+      tag:    "04 / ACC",
+      name:   "Tradveller Carabiner",
+      price:  30,
+      desc:   "TVRL. stamped carabiner — small carry for the long day.",
+      image:  null,
+      rating: 4,
+      reviews: 38
+    }
+  ],
+
+  /* ──────────────────────────────────────────────────────────────────
+     4. OUR STORY  — brand essay
+     ────────────────────────────────────────────────────────────────── */
+  story: {
+    eyebrow:    "§ Our Story",
+    title:      "Designed for movement.",
+    titleAccent: "Inspired by mindset.",
+    paragraphs: [
+      // The first paragraph is shown larger ("lede").
+      "At Tradveller, we believe life is a journey between two worlds — the one you build and the one you explore.",
+      "Born from the spirit of **trade and travel**, our brand represents those who pursue freedom with purpose — the thinkers, the doers, the creators who trade not just assets, but ideas, time, and energy to design a life without borders.",
+      "Our clothing is made for modern mobility: minimalist, functional, and timeless. Each piece blends performance and simplicity — adaptable enough for a long flight, a spontaneous trip, or a quiet morning of focus.",
+      "**We value less, but better.** Every material, every seam, every detail serves a reason — to keep you comfortable, confident, and ready to move.",
+      "Tradveller is not about luxury; it's about freedom — the freedom to work anywhere, live everywhere, and stay grounded while chasing the world ahead."
+      // Wrap any text in **double asterisks** to make it bold.
+    ]
+  },
+
+  /* ──────────────────────────────────────────────────────────────────
+     5. CUSTOMER REVIEWS
+     Edit or add new reviews. Same rule as products — copy a block to add.
+     ────────────────────────────────────────────────────────────────── */
+  reviews: {
+    headline: "175 reviews · all from the road.",
+    average:  "4.9 / 5",
+    items: [
+      {
+        stars: 5,
+        title: "The fit is exactly what I hoped for.",
+        body:  "Ordered the oversize T in Void Black for a trip to Bangkok. Wore it on the plane, slept in it, wore it again the next day — no creases, no funny smell. Already ordered the cap.",
+        who:   "Marcus T. · Kuala Lumpur",
+        when:  "2 days ago"
+      },
+      {
+        stars: 5,
+        title: "The jacket survives 14-hour days.",
+        body:  "I work remote — coffee shop in the morning, co-working in the afternoon, dinner with clients. The field jacket transitions through all of it without looking like I tried. Worth every ringgit.",
+        who:   "Priya K. · Penang",
+        when:  "1 week ago"
+      },
+      {
+        stars: 5,
+        title: "The packaging alone made me reorder.",
+        body:  "First time buying from a Malaysian brand and the unboxing was on par with anything I've had from Tokyo. Hangtag with the bull, kraft sleeve, handwritten thank-you. Hooked.",
+        who:   "Jonas R. · Singapore",
+        when:  "3 weeks ago"
+      }
+    ]
+  },
+
+  /* ──────────────────────────────────────────────────────────────────
+     6. NEWSLETTER SECTION
+     ────────────────────────────────────────────────────────────────── */
+  newsletter: {
+    headline:     "Join the",
+    headlineAccent: "journey.",
+    body:    "Early access to drops. Studio notes. Travel essays from the team. We send a quiet email when there's something worth saying — nothing more.",
+    code:    "JOURNEY10",
+    codeText: "Use the code **JOURNEY10** at checkout · 10% off your first piece · No spam, ever."
+  },
+
+  /* ──────────────────────────────────────────────────────────────────
+     7. FOOTER
+     ────────────────────────────────────────────────────────────────── */
+  footer: {
+    description: "The uniform of the new generation. Designed for movement, inspired by mindset. Trade with purpose. Travel with meaning. Live with balance.",
+    columns: [
+      {
+        title: "Shop",
+        links: [
+          { label: "T-Shirts",    href: "#products" },
+          { label: "Jackets",     href: "#products" },
+          { label: "Caps",        href: "#products" },
+          { label: "Accessories", href: "#products" }
+        ]
+      },
+      {
+        title: "Support",
+        links: [
+          { label: "FAQ",      href: "#" },
+          { label: "Shipping", href: "#" },
+          { label: "Returns",  href: "#" },
+          { label: "Contact",  href: "#" }
+        ]
+      },
+      {
+        title: "Follow",
+        links: [
+          { label: "@tradveller",     href: "#" },
+          { label: "Tradveller",       href: "#" },
+          { label: "@tradvellertrend", href: "#" }
+        ]
+      }
+    ],
+    legal: "© 2026 Tradveller · All rights reserved",
+    tag:   "Designed in Malaysia · Made for movement"
+  }
+
+};
+
+
+/* ========================================================================
+   ╔════════════════════════════════════════════════════════════════════╗
+   ║   ⛔  YOU DON'T NEED TO EDIT ANYTHING BELOW THIS LINE              ║
+   ║   This is the rendering code that builds the page from SHOP above. ║
+   ╚════════════════════════════════════════════════════════════════════╝
+   ======================================================================== */
+
+// Tiny helpers
+const $ = (sel) => document.querySelector(sel);
+const stars = (n) => Array.from({ length: 5 }, (_, i) =>
+  `<svg viewBox="0 0 24 24" style="${i < n ? '' : 'color:#e5e7eb;'}"><polygon points="12 2 15 9 22 9 16 14 18 22 12 18 6 22 8 14 2 9 9 9"/></svg>`
+).join('');
+const bold = (str) => str.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+const initials = (name) => name.replace(/Tradveller\s+/i, '').slice(0, 2).toUpperCase();
+const price = (n) => `${SHOP.brand.currency}&nbsp;${n}`;
+
+// Cart state
+let cart = [];
+function addToCart(idx) {
+  const p = SHOP.products[idx];
+  const existing = cart.find(x => x.idx === idx);
+  if (existing) existing.qty += 1;
+  else cart.push({ idx, qty: 1 });
+  renderCart();
+  openCart();
+}
+function adjustQty(idx, delta) {
+  const item = cart.find(x => x.idx === idx);
+  if (!item) return;
+  item.qty = Math.max(0, item.qty + delta);
+  if (item.qty === 0) cart = cart.filter(x => x.idx !== idx);
+  renderCart();
+}
+function openCart()  { $('#cartOverlay').classList.add('on');  $('#cartDrawer').classList.add('on'); }
+function closeCart() { $('#cartOverlay').classList.remove('on'); $('#cartDrawer').classList.remove('on'); }
+
+function renderCart() {
+  const total = cart.reduce((s, x) => s + SHOP.products[x.idx].price * x.qty, 0);
+  const count = cart.reduce((s, x) => s + x.qty, 0);
+  const drawer = $('#cartDrawer');
+  drawer.innerHTML = `
+    <div class="head">
+      <h3>Your bag · <span style="color:var(--accent);">${count}</span></h3>
+      <button class="close" onclick="closeCart()" aria-label="Close">
+        <svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="items">
+      ${cart.length === 0 ? '<div class="empty">Your bag is empty.</div>' :
+        cart.map(x => {
+          const p = SHOP.products[x.idx];
+          return `
+          <div class="cart-item">
+            <div class="pic"><svg><use href="#bull"/></svg></div>
+            <div>
+              <div class="name">${p.name}</div>
+              <div class="var">Size M · Qty ${x.qty}</div>
+              <div style="margin-top:8px;">
+                <button onclick="adjustQty(${x.idx}, -1)" style="color:#888; font-size:18px; padding:0 6px;">−</button>
+                <button onclick="adjustQty(${x.idx},  1)" style="color:#888; font-size:14px; padding:0 6px;">+</button>
+              </div>
+            </div>
+            <div class="price">${price((p.price * x.qty).toFixed(2))}</div>
+          </div>`;
+        }).join('')
+      }
+    </div>
+    <div class="foot">
+      <div class="total"><span>Total</span><span>${price(total.toFixed(2))}</span></div>
+      <button class="checkout">Checkout · ${price(total.toFixed(2))}</button>
+    </div>
+  `;
+  $('#cartBadge') && ($('#cartBadge').textContent = count);
+}
+
+// Build the whole page
+function renderPage() {
+  $('#app').innerHTML = `
+
+    <!-- PROMO BAR -->
+    <div class="promo">
+      <span class="tag">PROMO</span>
+      <span>${SHOP.brand.promo}</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="row">
+        <a href="#" class="brand">
+          <svg class="bull"><use href="#bull"/></svg>
+          <span class="wordmark">${SHOP.brand.wordmark}</span>
+        </a>
+        <nav>
+          ${SHOP.nav.map(n => `<a href="${n.link}">${n.label}</a>`).join('')}
+        </nav>
+        <div class="actions">
+          <button aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          <button aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg></button>
+          <button aria-label="Cart" onclick="openCart()">
+            <svg viewBox="0 0 24 24"><path d="M6 7h12l-1.4 11.2a2 2 0 0 1-2 1.8H9.4a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+            <span class="badge" id="cartBadge">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="figure"><svg class="bull" viewBox="0 0 46 60"><use href="#bull"/></svg></div>
+      <div class="copy">
+        <span class="eyebrow">${SHOP.brand.eyebrow}</span>
+        <h1>${SHOP.brand.wordmark}</h1>
+        <p class="sub">${SHOP.brand.tagline}</p>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="sec shell reveal" id="products">
+      <div class="sec-title">
+        <small>Shop the line · Four categories, tight curation</small>
+        <h2>Our Products</h2>
+      </div>
+      <div class="products">
+        ${SHOP.products.map((p, i) => `
+          <article class="pcard" onclick="addToCart(${i})">
+            <div class="img">
+              ${p.image
+                ? `<img src="${p.image}" alt="${p.name}" onerror="this.outerHTML='<div class=\\'fallback\\'>${initials(p.name)}</div>'">`
+                : `<div class="fallback">${initials(p.name)}</div>`}
+              <span class="corner-tag">${p.tag}</span>
+            </div>
+            <div class="info">
+              <div class="top">
+                <span class="name">${p.name}</span>
+                <span class="price">${price(p.price)}</span>
+              </div>
+              <p class="desc">${p.desc}</p>
+              <div class="row">
+                <div class="stars">${stars(p.rating)}<span class="ct">(${p.reviews})</span></div>
+                <button class="bag" aria-label="Add to bag" onclick="event.stopPropagation(); addToCart(${i})">
+                  <svg viewBox="0 0 24 24"><path d="M6 7h12l-1.4 11.2a2 2 0 0 1-2 1.8H9.4a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story reveal" id="story">
+      <div class="shell">
+        <div class="inner">
+          <div class="head">
+            <small>${SHOP.story.eyebrow}</small>
+            <h2>${SHOP.story.title}<br/><em>${SHOP.story.titleAccent}</em></h2>
+          </div>
+          <div class="essay">
+            ${SHOP.story.paragraphs.map((p, i) =>
+              `<p${i === 0 ? ' class="lede"' : ''}>${bold(p)}</p>`
+            ).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews reveal" id="reviews">
+      <div class="shell">
+        <div class="head">
+          <div>
+            <small>What buyers are saying</small>
+            <h2>${SHOP.reviews.headline}</h2>
+          </div>
+          <div class="right">
+            <div class="stars">${stars(5)}</div>
+            <span><b>${SHOP.reviews.average}</b> · Verified buyers</span>
+          </div>
+        </div>
+        <div class="grid">
+          ${SHOP.reviews.items.map(r => `
+            <article class="review">
+              <div class="stars">${stars(r.stars)}</div>
+              <h4>${r.title}</h4>
+              <p>${r.body}</p>
+              <div class="meta"><span class="who">${r.who}</span><span class="when">${r.when}</span></div>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="join reveal">
+      <div class="glow"></div>
+      <div class="inner">
+        <div class="bull-mini"><svg><use href="#bull"/></svg></div>
+        <h2>${SHOP.newsletter.headline} <em>${SHOP.newsletter.headlineAccent}</em></h2>
+        <p>${SHOP.newsletter.body}</p>
+        <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent ✓';">
+          <input type="email" placeholder="your@email.com" required />
+          <button type="submit">Sign up</button>
+        </form>
+        <p class="fine">${bold(SHOP.newsletter.codeText)}</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="inner">
+        <div class="grid">
+          <div class="brandblock">
+            <div class="mark">
+              <svg class="bull"><use href="#bull"/></svg>
+              <span class="wordmark">${SHOP.brand.wordmark}</span>
+            </div>
+            <p>${SHOP.footer.description}</p>
+          </div>
+          ${SHOP.footer.columns.map(col => `
+            <div>
+              <h4>${col.title}</h4>
+              <ul>
+                ${col.links.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+        <div class="rule">
+          <span>${SHOP.footer.legal}</span>
+          <span>${SHOP.footer.tag}</span>
+        </div>
+      </div>
+    </footer>
+  `;
+
+  // Initial cart render
+  renderCart();
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+// Run it
+document.title = `${SHOP.brand.wordmark} — ${SHOP.brand.tagline}`;
+renderPage();
+
+// Esc closes cart
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+</script>
+
+</body>
+</html>
